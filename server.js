@@ -1,14 +1,14 @@
-import express from "express";
-import expressLayout from "express-ejs-layouts";
-import path from "path";
-import { fileURLToPath } from 'url';
+const express = require("express");
+const expressLayout = require("express-ejs-layouts");
+const path = require("path");
+const app = express();
 
-const __filename = fileURLToPath(import.meta.url); 
-const __dirname = path.dirname(__filename);
-const app=express();
+
 
 const PORT=process.env.PORT || 3000;
 
+//ASSETS
+app.use(express.static('public'))
 app.get("/",(req,res)=>{
     res.render('home')
 })

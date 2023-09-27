@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "dev":"nodemon server.js",
-    "serve":"node sever.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js",
+    "serve": "node sever.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "development": "cross-env NODE_ENV=development npx webpack --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "production": "cross-env NODE_ENV=production npx webpack --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "keywords": [],
-  "author":"Neeraj",
+  "author": "Neeraj",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
@@ -18,6 +20,8 @@
     "express-ejs-layouts": "^2.5.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.49",
     "nodemon": "^3.0.1"
   }
 }
